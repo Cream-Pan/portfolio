@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png", 
   },
+  openGraph: {
+    title: "Takato Ishii | Portfolio",
+    description: "石井貴翔のポートフォリオ",
+    url: "https://takato-ishii.vercel.app/",
+    siteName: "Takato Ishii Portfolio",
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +45,7 @@ export default function RootLayout({
               <a href="/" className="hover:text-white transition-colors">Home</a>
               <a href="/#works" className="hover:text-white transition-colors">Works</a>
               <a href="/#achievements" className="hover:text-white transition-colors">Achievements</a>
+              <a href="/#skills" className="hover:text-white transition-colors">Skills</a>
               <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
             </div>
           </nav>

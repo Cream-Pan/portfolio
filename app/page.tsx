@@ -39,23 +39,61 @@ const works: Work[] = [
   },
 ];
 
+const heroTechs = [
+  "Python", "JavaScript", "HTML/CSS", "Arduino IDE", 
+  "Fusion 360", "KiCad"
+];
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: ["TypeScript","JavaScript", "Next.js", "HTML/CSS", "Flutter", "Dart"]
+  },
+  {
+    title: "Backend",
+    skills: ["Python", "C#", "Ruby", "Ruby on Rails(授業で使用)", "MySQL(授業で使用)", "Java(授業で使用)", "C", "R(授業で使用)", "Matlab(授業で使用)"]
+  },
+  {
+    title: "Tools",
+    skills: ["Git/GitHub", "VS Code", "Linux", "Android Studio", "Eclipse", "Modelio"]
+  },
+  {
+    title: "Others",
+    skills: ["Arduino IDE", "Unity", "Processing(授業で使用)", "KiCad (Rigid/Flex)", "JLCPCB Ordering", "Fusion 360", "Slack", "Notion"]
+  }
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen max-w-4xl mx-auto px-6 py-24">
       
       {/* ===== Hero ===== */}
       <section className="mb-32">
-        <h1 className="text-4xl font-bold text-text-main tracking-tight">
-          Takato Ishii
-        </h1>
-        <p className="mt-4 text-lg text-emerald-primary font-medium">
-          学生エンジニア / アプリ・ゲーム開発
-        </p>
-        <div className="mt-6 w-12 h-1 bg-emerald-primary rounded-full" />
-        <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
-          研究・授業・個人制作を通して，Web / Unity / モバイルアプリ開発に取り組む．
-        </p>
-      </section>
+      <h1 className="text-4xl font-bold text-text-main tracking-tight">
+        Takato Ishii
+      </h1>
+      <p className="mt-4 text-lg text-emerald-primary font-medium">
+        学生エンジニア / ハードウェア・ソフトウェア開発
+      </p>
+      <div className="mt-6 w-12 h-1 bg-emerald-primary rounded-full" />
+      <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
+        現在は，CHI分野の研究室に所属しており，耳装着型デバイスを用いた生体情報の取得に関する研究を行っています．<br/>
+        KiCadによる基板設計からFusion 360での筐体設計，計測データを可視化するWebアプリ構築まで，ハード・ソフトを統合した開発をしています．
+      </p>
+      <div className="mt-6 flex flex-wrap gap-2">
+        {heroTechs.map((tech) => (
+          <span 
+            key={tech}
+            className="text-xs font-mono px-3 py-1 bg-emerald-soft text-emerald-primary rounded-full border border-emerald-primary/20"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
+        また，Unityを用いたゲーム制作やモバイルアプリ開発など，領域を問わないものづくりも経験しています．
+      </p>
+    </section>
 
       {/* ===== Works ===== */}
       <section id="works" className="mb-32 border-t border-slate-800 pt-16">
@@ -177,6 +215,34 @@ export default function Home() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ===== Skills ===== */}
+      <section id="skills" className="mb-32 border-t border-slate-800 pt-16">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-2xl font-bold text-text-main">Skills</h2>
+          <div className="h-px grow bg-slate-800" />
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
+          {skillCategories.map((category) => (
+            <div key={category.title} className="space-y-4">
+              <h3 className="text-sm font-semibold text-emerald-primary uppercase tracking-wider">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span 
+                    key={skill}
+                    className="text-xs font-mono px-3 py-1 bg-emerald-soft text-emerald-primary rounded-full border border-emerald-primary/20"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
