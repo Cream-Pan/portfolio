@@ -1,19 +1,7 @@
-import Image from "next/image";
-
-/* ===== styles ===== */
-const cardStyle: React.CSSProperties = {
-  border: "1px solid #ddd",
-  borderRadius: "8px",
-  padding: "1.5rem",
-};
-
-const techStyle: React.CSSProperties = {
-  marginTop: "0.5rem",
-  fontSize: "0.9rem",
-  color: "#555",
-};
+import Link from "next/link";
 
 type Work = {
+  id: string;
   title: string;
   description: string;
   tech: string;
@@ -22,140 +10,186 @@ type Work = {
 
 const works: Work[] = [
   {
+    id: "rubiks-cube",
     title: "🧊 ルービックキューブ関連サイト",
-    description: "授業で制作したWebサイト。操作説明や可視化を意識。",
+    description: "ルービックキューブの歴史から揃え方まで分かるWebサイト．授業制作の一環として開発した．",
     tech: "HTML / CSS / JavaScript",
     url: "https://rubik-s.netlify.app/",
   },
   {
+    id: "maze-game",
     title: "🧩 Unity 迷路ゲーム",
-    description: "Unity授業で制作。プレイヤー操作とゴール設計。",
+    description: "プレイヤーの操作性とゴール設計を重視した3Dゲーム．Unity授業にて制作した．",
     tech: "Unity / C#",
     url: "https://maze-eat.netlify.app/",
   },
   {
+    id: "escape-game",
     title: "🚪 脱出ゲームアプリ",
-    description: "個人制作のスマホ向け脱出ゲーム。",
+    description: "個人制作によるandroid向けの2D脱出ゲームアプリ．Google Playで公開中．",
     tech: "Unity / C#",
-    url: "https://play.google.com/store/apps/details?id=com.creampan.illustrationroom&pcampaignid=web_share",
+    url: "https://play.google.com/store/apps/details?id=com.creampan.illustrationroom",
   },
   {
+    id: "typing-game",
     title: "⌨️ タイピングゲーム",
-    description: "コンテストで制作。スコア・難易度設計を担当。",
-    tech: "JavaScript",
+    description: "シュルレアリスムをテーマに，母音と子音を入れ替えたタイピングゲーム．システム設計を実装．",
+    tech: "Unity / C# / python",
     url: "https://men-da.netlify.app/",
   },
 ];
 
 export default function Home() {
   return (
-    <main style={{ padding: "4rem 1.5rem", maxWidth: "960px", margin: "0 auto" }}>
+    <main className="min-h-screen max-w-4xl mx-auto px-6 py-24">
       
-      {/* ===== Hero / Intro ===== */}
-      <section style={{ marginBottom: "6rem" }}>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+      {/* ===== Hero ===== */}
+      <section className="mb-32">
+        <h1 className="text-4xl font-bold text-text-main tracking-tight">
           Takato Ishii
         </h1>
-        <p style={{ marginTop: "1rem", fontSize: "1.1rem" }}>
+        <p className="mt-4 text-lg text-emerald-primary font-medium">
           学生エンジニア / アプリ・ゲーム開発
         </p>
-        <p style={{ marginTop: "0.5rem", color: "#666" }}>
-          研究・授業・個人制作を通して、Web / Unity / モバイルアプリ開発に取り組んでいます。
+        <div className="mt-6 w-12 h-1 bg-emerald-primary rounded-full" />
+        <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
+          研究・授業・個人制作を通して，Web / Unity / モバイルアプリ開発に取り組む．
         </p>
       </section>
 
       {/* ===== Works ===== */}
-      <section style={{ marginBottom: "6rem" }}>
-        <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>
-          Works
-        </h2>
+      <section id="works" className="mb-32 border-t border-slate-800 pt-16">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-2xl font-bold text-text-main">Works</h2>
+          <div className="h-px grow bg-slate-800" />
+        </div>
 
-        <div style={{ display: "grid", gap: "1.5rem" }}>
-          {works.map((work, index) => (
-            <div key={index} style={cardStyle}>
-              <h3>{work.title}</h3>
-              <p>{work.description}</p>
-              <p style={techStyle}>{work.tech}</p>
+        <div className="grid gap-8">
+          {works.map((work) => (
+            <div
+              key={work.id}
+              className="
+                group
+                border border-slate-800
+                rounded-2xl
+                p-8
+                bg-slate-800/40
+                transition-all duration-300 ease-out
+                hover:shadow-xl hover:shadow-emerald-900/10
+                hover:border-emerald-primary/40
+                hover:-translate-y-1
+              "
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <h3 className="text-xl font-bold group-hover:text-emerald-primary transition-colors">
+                  {work.title}
+                </h3>
+                <span className="text-xs font-mono px-3 py-1 bg-emerald-soft text-emerald-primary rounded-full border border-emerald-primary/20">
+                  {work.tech}
+                </span>
+              </div>
 
-              {work.url && (
-                <a
-                  href={work.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <p className="mt-4 text-text-sub leading-relaxed">
+                {work.description}
+              </p>
+
+              <div className="flex gap-6 mt-6">
+                <Link
+                  href={`/works/${work.id}`}
+                  className="text-sm font-bold text-text-main hover:text-emerald-primary transition-colors"
                 >
-                  見てみる →
-                </a>
-              )}
+                  詳細 →
+                </Link>
+
+                {work.url && (
+                  <a
+                    href={work.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      inline-flex items-center
+                      text-sm font-bold
+                      text-emerald-primary
+                      hover:text-emerald-400
+                      transition-colors
+                    "
+                  >
+                    作品を見る
+                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* ===== Achievements ===== */}
-      <section style={{ marginBottom: "6rem" }}>
-        <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>
-          Achievements
-        </h2>
+      <section id="achievements" className="mb-32 border-t border-slate-800 pt-16">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-2xl font-bold text-text-main">Achievements</h2>
+          <div className="h-px grow bg-slate-800" />
+        </div>
 
-        <ul>
-          <li style={{ marginBottom: "1rem" }}>
-            🏆 SICHI 学生コンテスト 2025  
-            <br />
-            最優秀賞・企業賞 受賞
-            <br />
-            <a
-              href="（SICHI 2025 公式受賞者ページURL）"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              公式受賞者ページ →
-            </a>
-          </li>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="p-6 rounded-xl bg-slate-800/30 border border-slate-800">
+            <h3 className="font-bold mb-4 flex items-center gap-2">
+              🏆 Contest
+            </h3>
+            <ul className="space-y-4 text-sm text-text-sub">
+              <li>
+                <span className="block font-medium text-text-main">SICHI 学生コンテスト 2025</span>
+                企業賞 受賞
+              </li>
+              <li>
+                <span className="block font-medium text-text-main">SICHI 学生コンテスト 2024</span>
+                最優秀賞 受賞
+                <a href="https://sites.google.com/view/sichi/sichi2024" target="_blank" className="block mt-1 text-emerald-primary hover:underline">公式受賞者ページ →</a>
+              </li>
+            </ul>
+          </div>
 
-          <li style={{ marginBottom: "1rem" }}>
-            🏆 SICHI 学生コンテスト 2024
-            <br />
-            最優秀賞・企業賞 受賞
-            <br />
-            <a
-              href="https://sites.google.com/view/sichi/sichi2024"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              公式受賞者ページ →
-            </a>
-          </li>
-
-          <li>📜 基本情報技術者試験 合格</li>
-
-          <li>📜 ITパスポート試験 合格</li>
-        </ul>
-      </section>
-
-      {/* ===== Skills ===== */}
-      <section style={{ marginBottom: "6rem" }}>
-        <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>
-          Skills
-        </h2>
-
-        <p>
-          Frontend：TypeScript / JavaScript / Next.js / HTML / CSS
-          <br />
-          Game / App：Unity / C#
-        </p>
-
+          <div className="p-6 rounded-xl bg-slate-800/30 border border-slate-800">
+            <h3 className="font-bold mb-4 flex items-center gap-2">
+              📜 Certification
+            </h3>
+            <ul className="space-y-3 text-sm text-text-sub">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-primary"></span>
+                基本情報技術者試験 合格 (2025年5月)
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-primary"></span>
+                ITパスポート試験 合格 (2023年10月)
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* ===== Contact ===== */}
-      <section>
-        <h2 style={{ fontSize: "1.8rem", marginBottom: "1.5rem" }}>
-          Contact
-        </h2>
-
-        <p>
-          GitHub・Google Play・外部リンクは順次追加予定
+      <footer id="contact" className="border-t border-slate-800 pt-16 pb-8 text-center">
+        <h2 className="text-xl font-bold text-text-main mb-4">Contact</h2>
+        <div className="space-y-2">
+          <p className="text-text-sub text-sm">
+            メールアドレス
+          </p>
+          <a 
+            href="mailto:aaotktcareer.05561519@gmail.com" 
+            className="text-emerald-primary hover:underline font-mono"
+          >
+            aaotktcareer.05561519@gmail.com
+          </a>
+        </div>
+        <p className="mt-8 text-text-sub text-sm">
+          GitHub のリンクは順次追加予定
         </p>
-      </section>
+        <p className="mt-12 text-xs text-gray-500">
+          © 2026 Takato Ishii. Built with Next.js.
+        </p>
+      </footer>
 
     </main>
   );
