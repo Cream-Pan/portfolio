@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Takato Ishii | Portfolio",
   description: "Takato Ishii's Portfolio",
+  icons: {
+    icon: "/icon.png", 
+  },
 };
 
 export default function RootLayout({
