@@ -31,10 +31,10 @@ export default function RootLayout({
               TI.
             </a>
             <div className="flex gap-6 text-sm font-medium text-text-sub">
-              <a href="#" className="hover:text-white transition-colors">Home</a>
-              <a href="#works" className="hover:text-white transition-colors">Works</a>
-              <a href="#achievements" className="hover:text-white transition-colors">Achievements</a>
-              <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+              <a href="/" className="hover:text-white transition-colors">Home</a>
+              <a href="/#works" className="hover:text-white transition-colors">Works</a>
+              <a href="/#achievements" className="hover:text-white transition-colors">Achievements</a>
+              <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
             </div>
           </nav>
         </header>

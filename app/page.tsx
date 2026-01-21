@@ -11,22 +11,22 @@ type Work = {
 const works: Work[] = [
   {
     id: "rubiks-cube",
-    title: "🧊 ルービックキューブ関連サイト",
+    title: "🧊 ルービックキューブサイト",
     description: "ルービックキューブの歴史から揃え方まで分かるWebサイト．授業制作の一環として開発した．",
     tech: "HTML / CSS / JavaScript",
     url: "https://rubik-s.netlify.app/",
   },
   {
     id: "maze-game",
-    title: "🧩 Unity 迷路ゲーム",
+    title: "🧩 迷路自動生成3Dアクションゲーム",
     description: "プレイヤーの操作性とゴール設計を重視した3Dゲーム．Unity授業にて制作した．",
     tech: "Unity / C#",
     url: "https://maze-eat.netlify.app/",
   },
   {
     id: "escape-game",
-    title: "🚪 脱出ゲームアプリ",
-    description: "個人制作によるandroid向けの2D脱出ゲームアプリ．Google Playで公開中．",
+    title: "🚪 Android向け2D脱出ゲーム：Illustration Room",
+    description: "Unityを用いて開発したAndroid向けの2D脱出ゲームアプリである．Google Playストアにて一般公開を行っており，設計から実装，リリースまでの一連の開発工程を単独で完遂した．",
     tech: "Unity / C#",
     url: "https://play.google.com/store/apps/details?id=com.creampan.illustrationroom",
   },
@@ -34,7 +34,7 @@ const works: Work[] = [
     id: "typing-game",
     title: "⌨️ タイピングゲーム",
     description: "シュルレアリスムをテーマに，母音と子音を入れ替えたタイピングゲーム．システム設計を実装．",
-    tech: "Unity / C# / python",
+    tech: "Unity / C#",
     url: "https://men-da.netlify.app/",
   },
 ];
@@ -141,12 +141,23 @@ export default function Home() {
             <ul className="space-y-4 text-sm text-text-sub">
               <li>
                 <span className="block font-medium text-text-main">SICHI 学生コンテスト 2025</span>
-                企業賞 受賞
+                <span className="text-emerald-primary font-bold">企業賞 受賞</span>
+                <Link 
+                  href="/works/sichi2025"
+                  className="hover:text-emerald-400 hover:underline transition-all flex items-center gap-1 mt-1"
+                >
+                  対象作品の詳細 →
+                </Link>
               </li>
               <li>
                 <span className="block font-medium text-text-main">SICHI 学生コンテスト 2024</span>
-                最優秀賞 受賞
-                <a href="https://sites.google.com/view/sichi/sichi2024" target="_blank" className="block mt-1 text-emerald-primary hover:underline">公式受賞者ページ →</a>
+                <span className="text-emerald-primary font-bold">最優秀賞 受賞</span><br/>
+                <Link 
+                  href="/works/sichi2024"
+                  className="hover:text-emerald-400 hover:underline transition-all flex items-center gap-1 mt-1"
+                >
+                  対象作品の詳細 →
+                </Link>
               </li>
             </ul>
           </div>
