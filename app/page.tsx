@@ -69,6 +69,12 @@ export default function Home() {
       
       {/* ===== Hero ===== */}
       <section className="mb-32">
+        <div className="relative w-30 h-30 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-emerald-primary/20 shadow-lg">
+        <img 
+          src="/images/boku.jpg" 
+          className="object-cover w-full h-full"
+        />
+      </div>
       <h1 className="text-4xl font-bold text-text-main tracking-tight">
         Takato Ishii
       </h1>
@@ -77,7 +83,7 @@ export default function Home() {
       </p>
       <div className="mt-6 w-12 h-1 bg-emerald-primary rounded-full" />
       <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
-        現在は，CHI分野の研究室に所属しており，耳装着型デバイスを用いた生体情報の取得に関する研究を行っています．<br/>
+        現在は，CHI分野の<a href="https://x-lab.team/" target="_blank" rel="noopener noreferrer" className="text-text-sub underline underline-offset-4 decoration-emerald-primary/30 hover:text-emerald-primary hover:decoration-emerald-primary transition-all">研究室</a>に所属しており，耳装着型デバイスを用いた生体情報の取得に関する研究を行っています．<br/>
         KiCadによる基板設計からFusion 360での筐体設計，計測データを可視化するWebアプリ構築まで，ハード・ソフトを統合した開発をしています．
       </p>
       <div className="mt-6 flex flex-wrap gap-2">
