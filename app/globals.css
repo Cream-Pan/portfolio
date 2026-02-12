@@ -30,3 +30,7 @@ body {
   background-color: var(--selection-bg);
   color: #ffffff;
 }
+
+section[id] {
+  scroll-margin-top: 1rem; /* 80px */
+}

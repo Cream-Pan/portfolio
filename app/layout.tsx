@@ -41,8 +41,8 @@ export default function RootLayout({
             <a href="/" className="font-bold text-emerald-primary hover:opacity-80 transition-opacity">
               TI.
             </a>
-            <div className="flex gap-6 text-sm font-medium text-text-sub">
-              <a href="/" className="hover:text-white transition-colors">Home</a>
+            <div className="flex gap-3 md:gap-6 text-[12px] md:text-sm font-medium text-text-sub">
+              <a href="/#about" className="hover:text-white transition-colors">Strengths</a>
               <a href="/#works" className="hover:text-white transition-colors">Works</a>
               <a href="/#achievements" className="hover:text-white transition-colors">Achievements</a>
               <a href="/#skills" className="hover:text-white transition-colors">Skills</a>
@@ -51,7 +51,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <div className="pt-16">
+        <div className="pt-13">
           {children}
         </div>
       </body>
