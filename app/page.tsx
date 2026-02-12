@@ -60,7 +60,7 @@ const skillCategories = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-w-4xl mx-auto px-6 py-24">
+    <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
       
       {/* ===== Hero ===== */}
       <section className="mb-10">
@@ -78,7 +78,7 @@ export default function Home() {
         ハードウェア・ソフトウェア開発 / 生体信号解析・ウェアラブルデバイス研究
       </p>
       <div className="mt-6 w-12 h-1 bg-emerald-primary rounded-full" />
-      <p className="mt-8 text-text-sub max-w-2xl leading-relaxed">
+      <p className="mt-8 text-text-sub leading-relaxed text-base">
         現在は、<b>CHI分野</b>の<a href="https://x-lab.team/" target="_blank" rel="noopener noreferrer" className="text-text-sub underline underline-offset-4 decoration-emerald-primary/30 hover:text-emerald-primary hover:decoration-emerald-primary transition-all">研究室</a>に所属しており、<b>「人を環境評価のセンサとして位置付ける」</b>というアプローチに基づいた、<b>耳装着型ウェアラブルデバイス</b>の研究開発を行っています。<br/>
         鼓膜温度や脈波(PPG)といった微細な生体情報を低負担で連続測定するため、KiCadを用いた<b>基板設計</b>からFusion 360での<b>筐体設計</b>、さらには取得データの機械学習による分析まで、ハードウェアからソフトウェア・データ解析にわたる実装をしています。<br/>
         その他、Unityを用いた3Dゲーム制作やモバイルアプリ開発など、領域に捉われない「ヒトとモノとのつながりの構築」に情熱を注いでいます。
@@ -145,7 +145,7 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="mt-4 text-text-sub leading-relaxed">
+            <p className="mt-4 text-text-sub leading-relaxed text-base">
               {work.description}
             </p>
 
