@@ -27,7 +27,7 @@ export default async function WorkDetail({ params }: Props) {
   }
 
   return (
-    <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
+    <main className="min-h-screen w-full max-w-5xl mx-auto px-6 py-24">
       <section>
         <div className="flex items-center gap-4 mb-8">
           <div className="h-px grow bg-slate-800" />

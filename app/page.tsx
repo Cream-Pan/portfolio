@@ -60,7 +60,7 @@ const skillCategories = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
+    <main className="min-h-screen w-full max-w-5xl mx-auto px-6 py-24">
       
       {/* ===== Hero ===== */}
       <section className="mb-10">

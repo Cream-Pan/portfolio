@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="ja" className="dark scroll-smooth" style={{ colorScheme: 'dark' }}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <header className="fixed top-0 left-0 right-0 z-50 bg-[#5c6482]/90 backdrop-blur-md border-b border-slate-800">
-          <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <nav className="w-full max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" className="font-bold text-emerald-primary hover:opacity-80 transition-opacity">
               TI.
             </a>
