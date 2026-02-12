@@ -72,8 +72,8 @@ export default async function WorkDetail({ params }: Props) {
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
-          <div className="md:col-span-2 space-y-8">
-            <div>
+          <div className="md:col-span-2 space-y-12">
+            {/* <div>
               <h2 className="text-xl font-bold text-emerald-primary mb-4 flex items-center gap-2">
                 <span>■</span> 概要
               </h2>
@@ -82,6 +82,47 @@ export default async function WorkDetail({ params }: Props) {
                   <p key={i}>{p}</p>
                 ))}
               </div>
+            </div> */}
+            {/* 1. 概要・2. 状況説明 */}
+            <div>
+              <h2 className="text-xl font-bold text-emerald-primary mb-4 flex items-center gap-2">
+                <span>■</span> 概要と背景
+              </h2>
+              <div className="text-text-sub leading-relaxed space-y-4 text-sm md:text-base">
+                <p>{project.content.overview}</p>
+                <p>{project.content.context}</p>
+                <p>{project.content.background}</p>
+              </div>
+            </div>
+
+            {/* 4. どのような工夫をしたのか */}
+            <div>
+              <h2 className="text-xl font-bold text-emerald-primary mb-4 flex items-center gap-2">
+                <span>■</span> 技術的な工夫
+              </h2>
+              <ul className="list-none space-y-3 text-text-sub text-sm md:text-base">
+                {project.content.innovation.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-emerald-primary font-bold">・</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 5. 得られた成果・学んだこと */}
+            <div>
+              <h2 className="text-xl font-bold text-emerald-primary mb-4 flex items-center gap-2">
+                <span>■</span> 成果・学んだこと
+              </h2>
+              <ul className="list-none space-y-3 text-text-sub text-sm md:text-base">
+                {project.content.results.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-emerald-primary font-bold">・</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="flex gap-6">
