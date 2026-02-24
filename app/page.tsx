@@ -278,9 +278,19 @@ export default function Home() {
           aaotktcareer.05561519@gmail.com
         </a>
       </div>
-      <p className="mt-8 text-text-sub text-sm">
-        GitHub のリンクは順次追加予定
-      </p>
+      <div className="space-y-2">
+        <p className="text-text-sub text-sm">
+          GitHub
+        </p>
+        <a 
+          href="https://github.com/Cream-Pan"
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-emerald-primary hover:underline font-mono"
+        >
+          https://github.com/Cream-Pan
+        </a>
+      </div>
       <p className="mt-12 text-xs text-gray-500">
         © 2026 Takato Ishii. Built with Next.js.
       </p>
